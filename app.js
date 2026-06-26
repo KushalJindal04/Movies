@@ -57,7 +57,6 @@ app.post('/movies/', async (request, response) => {
   const movieId = newMovie.lastId
   response.send('Movie Successfully Added')
 })
-module.exports = app
 
 // Returns a movie based on the movie ID
 
@@ -133,3 +132,5 @@ app.get('/directors/:directorId/movies/', async (request, response) => {
   const allMoviesArray = await db.all(getMoviesBasedOnDirectorQuery)
   response.send(allMoviesArray.map(eachMovie => convertToCamelCase(eachMovie)))
 })
+
+module.exports = app
